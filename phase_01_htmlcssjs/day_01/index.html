@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Layout Design</title>
+    <style>
+        /* General page reset for clean rendering */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 40px 0;
+        }
+
+        #container {
+            width: 90%;
+            max-width: 1200px; /* Prevents it from getting too wide on large screens */
+            margin: auto;
+            display: flex; 
+            align-items: stretch; /* Ensures all cards stretch to the same height */
+            justify-content: center;
+            gap: 20px;
+        }
+
+        /* Card Container */
+        .card {
+            background-color: #f4f6f8; /* Light grey/blue background from the image */
+            width: 33.33%; 
+            display: flex;
+            flex-direction: column; /* Stacks image and text vertically */
+            border-radius: 8px;
+            overflow: hidden; /* Keeps the top corners of the image rounded */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Softer, subtle shadow */
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .card:hover {
+            transform: translateY(-5px); /* Tiny hover effect for modern feel */
+        }
+
+        /* Image Styling */
+        .card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover; /* Ensures the image fills the space without stretching */
+        }
+
+        /* Content inside the card */
+        .card-content {
+            padding: 25px 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1; /* Forces the content area to take up remaining vertical space */
+        }
+
+        .category {
+            font-size: 13px;
+            color: #777;
+            margin: 0 0 10px 0;
+        }
+
+        .title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #222;
+            margin: 0 0 15px 0;
+            line-height: 1.4;
+        }
+
+        .description {
+            font-size: 14px;
+            color: #666;
+            margin: 0 0 25px 0;
+            line-height: 1.6;
+            flex-grow: 1; /* Pushes the 'Read More' link to the very bottom */
+        }
+
+        .read-more {
+            font-size: 13px;
+            font-weight: bold;
+            color: #111;
+            text-decoration: none;
+            align-self: flex-start;
+            border-bottom: 2px solid #111; /* Creates the thick underline effect */
+            padding-bottom: 2px;
+        }
+
+        /* Responsive Design: Stacks cards on smaller screens */
+        @media (max-width: 800px) {
+            #container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .card {
+                width: 100%;
+                max-width: 450px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="container">
+        
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1520333789090-1afc82db536a?q=80&w=600&auto=format&fit=crop" alt="Red Bottle">
+            <div class="card-content">
+                <p class="category">Fashion Tips</p>
+                <h3 class="title">What Curling Irons Are The Best Ones</h3>
+                <p class="description">Consectetur adipisicing elit. Laborum fuga incidunt laboriosam voluptas iure, delectus.</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1460353581641-37baddab0fa2?q=80&w=600&auto=format&fit=crop" alt="Shoes">
+            <div class="card-content">
+                <p class="category">Fashion Tips</p>
+                <h3 class="title">Vogue's Ultimate Guide To Autumn/Winter 2019 Shoes</h3>
+                <p class="description">Consectetur adipisicing elit. Laborum fuga incidunt laboriosam voluptas iure, delectus.</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=600&auto=format&fit=crop" alt="Green Bottle">
+            <div class="card-content">
+                <p class="category">Fashion Tips</p>
+                <h3 class="title">What Curling Irons Are The Best Ones</h3>
+                <p class="description">Consectetur adipisicing elit. Laborum fuga incidunt laboriosam voluptas iure, delectus.</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
